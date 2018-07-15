@@ -35,7 +35,7 @@ export default {
     }
   },
   activated () {
-    this.$loading.hide()
+    this.$vux.loading.hide()
   },
   methods: {
     onLogin () {
@@ -44,7 +44,7 @@ export default {
           text: '请输入AccessToken'
         })
       } else {
-        this.$loading.show()
+        this.$vux.loading.show()
         this.$axios.post('/accesstoken', {
           accesstoken: this.accessToken
         })
@@ -60,7 +60,7 @@ export default {
             this.$vux.toast.show({
               text: '登录成功'
             })
-            this.$loading.hide()
+            this.$vux.loading.hide()
             this.$router.push('/')
           })
           .catch(() => {
@@ -68,7 +68,7 @@ export default {
             this.$vux.toast.show({
               text: 'AccessToken错误'
             })
-            this.$loading.hide()
+            this.$vux.loading.hide()
           })
       }
     }
