@@ -5,8 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import VueLazyload from 'vue-lazyload'
-import axios from './components/axios'
-import { LoadingPlugin, ToastPlugin, Tabbar, TabbarItem, XInput, XTextarea, Selector, Group, XButton, Flexbox, FlexboxItem, Tab, TabItem, Scroller, Spinner, Popup } from 'vux'
+import { AjaxPlugin, LoadingPlugin, ToastPlugin, Tabbar, TabbarItem, XInput, XTextarea, Selector, Group, XButton, Flexbox, FlexboxItem, Tab, TabItem, Scroller, Spinner, Popup } from 'vux'
 import * as filters from './filters'
 
 Vue.config.productionTip = false
@@ -18,7 +17,7 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-Vue.use(axios)
+Vue.use(AjaxPlugin)
 Vue.use(LoadingPlugin)
 Vue.use(ToastPlugin)
 Vue.component('Tab', Tab)

@@ -1,0 +1,22 @@
+@import './common';
+
+.login-box {
+  background: @globalBackgroundColor;
+  padding: @globalPadding;
+  box-sizing: border-box;
+  & .weui_cells,& .weui_btn  {
+    font-size: 14px;
+  }
+
+  & .login-logo {
+    padding: 0 16px;
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.login-title {
+  text-align: center;
+  margin: 20px 0;
+}

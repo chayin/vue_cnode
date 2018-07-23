@@ -12,7 +12,7 @@
 
     <tabbar :class="{'hide' : !$store.getters.isShowTabbar}">
       <tabbar-item :selected="$route.name === 'index'" link="/">
-        <i slot="icon" class="icon-bookmark"></i>
+        <i slot="icon" class="icon-bookmark" style="width: 10px;height: 16px;"></i>
         <span slot="label" v-text="'首页'"></span>
       </tabbar-item>
 
@@ -33,3 +33,11 @@
     </tabbar>
   </div>
 </template>
+
+<style lang="less">
+  .weui-tabbar {
+    &.hide {
+      transform:translateY(71px);
+    }
+  }
+</style>

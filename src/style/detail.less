@@ -1,0 +1,119 @@
+@import './common';
+
+.article-box {
+  background: @globalBackgroundColor;
+}
+
+.head-title {
+  font-size: 18px;
+  marign: 0;
+}
+
+.head-box {
+  padding: @globalPadding;
+  background: #fff;
+}
+
+.head-intro {
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.head-middle {
+  flex: 1;
+  margin-left: 10px;
+}
+.head-right {
+  width: 36px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 16px;
+  & .icon-heart {
+    color: @globalStrongColor;
+  }
+}
+
+.head-middle-top {
+  display: flex;
+  align-items: center;
+}
+
+.head-author-name {
+  margin-left: 8px;
+}
+
+.content-box {
+  padding: 0 @globalPadding;
+  background: #fff;
+  box-shadow: 0 2px 2px #cecece;
+}
+
+.comment-box {
+  margin-top: 8px;
+  background: #fff;
+}
+
+.comment-title {
+  padding: 18px @globalPadding;
+  position: relative;
+  &:before {
+    .setBottomLine(@globalBorderColor);
+  }
+}
+
+.comment-li {
+  position: relative;
+  &:before {
+    .setBottomLine(@globalBorderColor);
+  }
+  padding: @globalPadding;
+}
+
+.comment-head {
+  display: flex;
+}
+
+.comment-middle {
+  margin-left: 8px;
+  flex: 1;
+}
+
+.comment-middle-bottom {
+  & span {
+    color: @globalStrongColor;
+  }
+}
+
+.comment-right {
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #666;
+  & span {
+    margin-left: 2px;
+  }
+  & .icon-reply {
+    margin-left: 8px;
+  }
+  & .active {
+  color: @globalStrongColor;
+  }
+}
+
+.comment-content {
+  margin-top: 8px;
+  & p {
+    margin: 0;
+  }
+}
+
+.popup-editor-box {
+  & .weui_btn {
+    font-size: 14px;
+  }
+  & .weui_vcode .weui_btn {
+    height: 36px;
+  }
+}

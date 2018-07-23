@@ -17,7 +17,7 @@
           </router-link>
         </flexbox-item>
         <flexbox-item>
-          <x-botton type="primary" @click="onLogin">立即登录</x-botton>
+          <x-button type="primary" @click.native="onLogin">立即登录</x-button>
         </flexbox-item>
       </flexbox>
     </div>
@@ -28,7 +28,7 @@
 export default {
   data () {
     return {
-      accessToken: 'f24da430-fbcd-4710-880c-f53bb289924f',
+      accessToken: '4924707d-fdd0-437f-be27-4b3687217ce4',
       currTab: '最近回复',
       userData: {},
       isLogin: false
@@ -80,3 +80,7 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+@import '../style/login.less';
+</style>

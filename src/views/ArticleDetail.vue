@@ -51,7 +51,7 @@
           </div>
           <div class="comment-right">
             <!-- 点赞的时候肯定要收集点赞者的id和几楼? -->
-            <div @click="onLikeThisComment(c.id, index)" style="display: flex;" :class="{'active': index < 60 && c.ups.indexOf($store.getters.loginInfo.id) >= 0}">
+            <div @click="onLikeThisComment(c.id, index)" style="display: flex;" :class="{ 'active': index < 60 && c.ups.indexOf($store.getters.loginInfo.id) >= 0}">
               <i class="icon-thumbs-up"></i>
               <span v-text="c.ups.length"></span>
             </div>
@@ -310,6 +310,9 @@ export default {
       }
     },
     onLikeThisComment (id, index) {
+      console.log(this.$store.getters)
+      console.log(this.$store.getters.loginInfo)
+      console.log(this.$store.getters.loginInfo.id)
       if (this.checkLogin()) {
         this.$axios.post(`/reply/${id}/ups`, {
           accessToken: this.$store.getters.accessToken
@@ -354,8 +357,9 @@ export default {
 }
 </script>
 
-<style type="text/css">
-  .weui_text_left .weui_input {
-    text-align: left;
-  }
+<style lang="less">
+@import '../style/detail.less';
+.weui_text_left .weui_input {
+  text-align: left;
+}
 </style>

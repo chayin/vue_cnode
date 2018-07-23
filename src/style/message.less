@@ -1,0 +1,72 @@
+@import './common';
+
+.message-box {
+  background: @globalBackgroundColor;
+  padding-bottom: @globalPaddingBottom;
+}
+
+.message-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #c5c5c5;
+}
+
+.message-icon {
+  font-size: 80px;
+  //color: #999;
+  //color: #c5c5c5;
+}
+
+.message-text {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+.message-li {
+  background: #fff;
+  padding-bottom: 1px;
+  box-shadow: 0 2px 2px #e8e8e8;
+  margin-bottom: 8px;
+}
+
+.message-head {
+  display: flex;
+  padding: @globalPadding;
+}
+
+.message-head-right {
+  margin-left: @globalPadding;
+  flex: 1;
+}
+
+.message-name {
+  position: relative;
+  & span {
+    position: absolute;
+    right: 0;
+    color: @globalStrongColor;
+  }
+}
+
+.message-intro {
+  font-size: 13px;
+  margin-top: 4px;
+  color: @globalGhostColor;
+}
+
+.message-content {
+  padding-left: @globalPadding;
+  padding-right: @globalPadding;
+}
+
+.message-topic {
+  padding: 8px;
+  margin: @globalPadding;
+  background: #eee;
+  border-radius: 4px;
+  color: #666;
+}
+

@@ -1,12 +1,12 @@
 <template>
 <div class="create-box" :style="{minHeight: minHeight + 'px'}">
-    <group title="新话题">
-      <x-button type="primary" mini slot="button" style="position: absolute;right: 14px;font-size: 12px" @click.native="onSendArtice">发布</x-button>
-      <!-- 自定义组件的 v-model -->
-      <selector title="分类" :options="typeList" v-model="selectType"></selector>
-      <x-input placeholder="标题，字数10字以上" v-model="title"></x-input>
-      <x-textarea :height="minHeight - 42 - 44 - 22 - 40" v-model="content" name="description" placeholder="说点什么吧..."></x-textarea>
-    </group>
+  <x-button type="primary" mini slot="default" style="position: absolute;top: 5px;right: 14px;font-size: 12px" @click.native="onSendArticle">发布</x-button>
+  <group title="新话题">
+    <!-- 自定义组件的 v-model -->
+    <selector title="分类" :options="typeList" v-model="selectType"></selector>
+    <x-input placeholder="标题，字数10字以上" v-model="title"></x-input>
+    <x-textarea :height="minHeight - 42 - 44 - 22 - 40" v-model="content" name="description" placeholder="说点什么吧..."></x-textarea>
+  </group>
 </div>
 </template>
 
@@ -92,4 +92,16 @@ export default {
   }
 }
 </script>
-<!-- 文章发布界面的样式在哪啊 -->
+
+<style lang="less">
+@import '../style/common.less';
+
+.create-box {
+  background: @globalBackgroundColor;
+  padding-top: 1px;
+  margin-top: -1px;
+  & .weui_cells {
+    font-size: 14px;
+  }
+}
+</style>

@@ -1,0 +1,174 @@
+@globalTextColor: #888;
+@globalStrongColor: #80bd01;
+
+@globalBorderColor: #BCBAB6;
+@globalBackgroundColor: #f4f4f4;
+
+@tabbar-index: 100;
+@tabbar-text-active-color: #09BB07;
+
+@globalButtonColor: #80bd01;
+@globalGhostColor: #999;
+
+@globalPadding: 14px;
+@globalPaddingBottom: 50px;
+
+@import './markdown.less';
+
+.setBottomLine(@c: #C7C7C7) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid @c;
+    color: @c;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+html, body {
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #08c;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.avatar {
+	width: 36px;
+	height: 36px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.avatar img {
+	width: 100%;
+	height: 100%;
+}
+
+/** text-overflow 属性规定当文本溢出包含元素时发生的事情。ellipsis  显示省略符号来代表被修剪的文本。 
+要配合overflow: hidden;一起使用
+**/
+/** nowrap 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。**/
+.feed-box {
+	& a {
+    color: #333;
+	}
+  & .feed-li {
+    list-style: none;
+    padding: @globalPadding;
+    position: relative;
+    &:before {
+      .setBottomLine(@globalBorderColor);
+    }
+  }
+  & .feed-title {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+  & .feed-title p {
+    margin: 0 0 0 8px;
+    font-size: 14px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    flex: 1; 
+    min-width: 0;
+  }
+  & .feed-content {
+    display: flex;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  & .feed-time {
+    font-size: 12px;
+    color: #666;
+  }
+  & .feed-right {
+    flex: 1;
+    min-width: 0;
+    margin-left: 8px;
+  }
+  & .feed-right .feed-right-top, & .feed-right .feed-right-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  & .feed-right-bottom {
+    margin-top: 4px;
+  }
+  & .feed-count span {
+    color: @globalStrongColor;
+  }
+}
+
+.feed-label {
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 0 5px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  &.feed-label-top {
+    background-color: @globalButtonColor;
+    color: #fff;
+  }
+  &.feed-label-other {
+    background-color: #e3e3e3;
+    color: #333;
+  }
+}
+
+
+.ext-btn-reply {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: @globalStrongColor;
+  color:#fff;
+  display: flex;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 6px 12px #c7c7c7;
+  transition: all 0.33s linear;
+  &.hide {
+    transform:translateY(60px);
+  }
+  & .icon-reply {
+    font-size: 18px;
+    margin-top: 3px;
+  }
+  &.btn-logout.hide {
+    transform:translateY(140px);
+  }
+  &.btn-logout {
+    bottom: 85px;
+  }
+}

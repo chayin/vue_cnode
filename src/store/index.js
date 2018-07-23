@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     loading: false,
     isShowTabbar: true,
     loginInfo: {
-      avatarUrl: null, // 头像链接
+      avatarUrl: null,
       id: null,
       loginname: '',
       accessToken: ''
@@ -61,7 +61,7 @@ const store = new Vuex.Store({
       return state.loginInfo.accessToken
     },
     loginInfo (state, getters) {
-      return state.loginInfo.accessToken
+      return state.loginInfo
     },
     direction (state, getters) {
       return state.direction
